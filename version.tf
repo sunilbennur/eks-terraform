@@ -2,11 +2,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.63"
+      version = "~> 4.53"
     }
   }
-  
-#terrafrom remote state block with s3
+
+  #terrafrom remote state block with s3
 
   # backend "s3" {
   #   bucket = "terraform-state-bucket81"
