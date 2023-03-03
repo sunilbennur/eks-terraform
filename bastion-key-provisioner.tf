@@ -5,12 +5,13 @@ resource "null_resource" "ec2-key-pair" {
     host        = aws_eip.bastion_eip.public_ip
     user        = "ec2-user"
     password    = ""
-    private_key = file("private_key/key")
+    #private_key = file("eks-terraform-key")
+    private_key = file("${path.module}/eks-terraform-key.pem")
   }
 
 
   provisioner "file" {
-    source      = "private-key/eks-terraform-key.pem"
+    source      = "/home/sunil/infraprojects/terraform-vpc-bastion-eks/eks-terraform-key.pem"
     destination = "/tmp/eks-terraform-key.pem"
   }
 

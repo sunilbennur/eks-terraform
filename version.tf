@@ -2,18 +2,18 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.53"
+      version = "~> 4.56"
     }
   }
 
   #terrafrom remote state block with s3
 
-  # backend "s3" {
-  #   bucket = "terraform-state-bucket81"
-  #   key = "terraform.tfstate"
-  #   dynamodb_table = "state-locking"
-  #   region = "us-west-1"
-  # }
+  backend "s3" {
+    bucket         = "terraform-state-bucket81"
+    key            = "terraform.tfstate"
+    dynamodb_table = "state-locking"
+    region         = "us-east-1"
+  }
 }
 
 # provider block to configure aws 
