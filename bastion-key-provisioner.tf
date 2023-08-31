@@ -21,6 +21,6 @@ resource "null_resource" "ec2-key-pair" {
     ]
   }
 
-  #explicit dependency 
+  #explicit dependency modules 
   depends_on = [module.vpc, module.ec2_bastion]
 }
